@@ -15,12 +15,12 @@ def esFecha(expFecha):
     # Manejo estructurado de excepciones.
     try:
         # Extrae el año, mes y día del valor proporcionado
-        anio=expFecha[0:4]
-        mes=expFecha[5:7]
-        dia=expFecha[-2:]
+        anio=int(expFecha[0:4])
+        mes=int(expFecha[5:7])
+        dia=int(expFecha[-2:])
         # Intenta generar una fecha a partir del
         # anio mes y dia proporcionados.
-        datetime.date(int(anio),int(mes),int(dia))
+        datetime.date(anio,mes,dia)
     except ValueError:
         # Si se provoca un error, el programa pasa el
         # control a este bloque.
@@ -32,14 +32,14 @@ def esFecha(expFecha):
 # Funcion que convierte una cadena YYYY/MM/DD a su valor
 # equivalente datetime.
 def strtodate(expFecha):
-    anio=expFecha[0:4]
-    mes=expFecha[5:7]
-    dia=expFecha[-2:]
-    return datetime.date(int(anio), int(mes), int(dia))
+        anio=int(expFecha[0:4])
+        mes=int(expFecha[5:7])
+        dia=int(expFecha[-2:])
+        return datetime.date(anio,mes,dia)
 
 def main():
     # Se establece el valor del pago.
-    colegiatura=5600.00
+    colegiatura=5500.00
     # Declaro variable de trabajo para capturar la fecha real de pago
     _fechapago=""
     # Inicializo una variable para que contenga la fecha compromiso
